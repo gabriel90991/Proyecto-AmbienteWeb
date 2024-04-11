@@ -25,9 +25,11 @@
         <h1 class="text-center">Bienvenido/a a nuestra Tienda</h1>
 
 <?php
+session_start();
 include 'conexion/conexion.php';
 
 $nombre = $_POST['nombre'];
+
 $correo = $_POST['correo'];
 $contraseña = $_POST['contraseña'];
 
@@ -42,6 +44,10 @@ $contraseña_encriptada = password_hash($contraseña, PASSWORD_DEFAULT);
 $sql = "INSERT INTO usuarios (Nombre, Correo, Contraseña) VALUES ('$nombre', '$correo', '$contraseña_encriptada')";
 
 if (mysqli_query($conexion, $sql)) {
+    // Obtén el ID del usuario que acaba de registrarse
+    $usuarioID = mysqli_insert_id($conexion);
+    $_SESSION['nombre'] = $nombre;
+    $_SESSION['usuarioID'] = $usuarioID; // Guarda el ID del usuario en la sesión
     echo "Nuevo registro creado exitosamente";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conexion);
