@@ -39,36 +39,30 @@
             <div class="burbuja"></div>
         </div>
     </header>
-        <div class="container w-75  mt-5 rounded shadow">
-            <div class="row align-items-stretch">
-                <div class="col bg">
-
-                </div>
-                <div class="col">
-                    <h2 class="fw-bold text-center py-4">Registrar usuario</h2>
-                    <form id="formRegistro">
-                        <div class="mb-4">
-                            <label for="nombre" class="form-label">Nombre: </label>
-                            <input type="text" class="form-control" id="nombre">
-                        </div>
-                        <div class="mb-4">
-                            <label for="email" class="form-label">Correo electrónico: </label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
-                        <div class="mb-4">
-                            <label for="contraseña" class="form-label">Contraseña: </label>
-                            <input type="password" class="form-control" id="contraseña">
-                        </div>
-                        <div class="d-grid">
-                            <input type="button" class="btn btn-dark form-control" onclick="registrarUsuario()" value="Registrar"></input>
-                        </div>
-                        <div class="my-3">
-                            <span>Ya tienes cuenta? <a href="inicio_sesion.html">Iniciar sesión</a></span><br>
-                        </div>
-                    </form>
-                </div>
+    <div class="container w-75  mt-5 rounded shadow">
+        <div class="row align-items-stretch">
+            <div class="col bg">
+            </div>
+            <div class="col">
+                <h2 class="fw-bold text-center py-4">Registrar usuario</h2>
+                <form action="procesar_registro.php" method="post" id="formRegistro">
+                    <div class="mb-4">
+                        <label for="nombre" class="form-label">Nombre: </label>
+                        <input type="text" class="form-control" id="nombre" name="nombre">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="form-label">Correo electrónico: </label>
+                        <input type="email" class="form-control" id="email" name="correo">
+                    </div>
+                    <div class="mb-4">
+                        <label for="contraseña" class="form-label">Contraseña: </label>
+                        <input type="password" class="form-control" id="contraseña" name="contraseña">
+                    </div>
+                    <input type="submit" value="Registrarse">
+                </form>
             </div>
         </div>
+    </div>
         <br>
         <footer style= "text-align: center;">
             <p>&copy; Copyright 2024</p>

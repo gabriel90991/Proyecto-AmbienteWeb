@@ -1,9 +1,9 @@
 <?php
 // Se creo la conexion con la base de datos de dos maneras para facilitar el codigo en diferentes partes.
-    $server='localhost:3307';
+    $server='localhost';
     $user='root';
-    $password='1234';
-    $dataBase = "proyecto_ambiente";
+    $password='';
+    $dataBase = "hikerscr";
     $conexion = mysqli_connect($server, $user, $password, $dataBase);
 
     if(!$conexion){
@@ -11,10 +11,10 @@
     }
 
     function Conecta(){
-        $server = "localhost:3307";
+        $server = "localhost";
         $user = "root";
         $pass = "";
-        $bd = "proyectofinal_ambiente";
+        $bd = "hikerscr";
         $conexion = mysqli_connect($server, $user, $pass, $bd);
     
         if($conexion){
