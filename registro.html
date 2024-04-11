@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animaciones.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        .bg{
+            background-image: url(img/nombre.jpg);
+            background-position: center center;
+        }
+    </style>
+</head>
+<body onload="checarSesion();">
+    <header class="bg_animate">
+        <section class="banner contenedor">
+            <secrion class="banner_title" style="text-align: center;">
+                <h2 > HikersCR </h2>
+            </secrion>
+            <div class="banner_img">
+                <img src="img/nombre.jpg" width="100">
+            </div>
+        </section>
+        <div class="burbujas">
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+        </div>
+    </header>
+        <div class="container w-75  mt-5 rounded shadow">
+            <div class="row align-items-stretch">
+                <div class="col bg">
+
+                </div>
+                <div class="col">
+                    <h2 class="fw-bold text-center py-4">Registrar usuario</h2>
+                    <form id="formRegistro">
+                        <div class="mb-4">
+                            <label for="nombre" class="form-label">Nombre: </label>
+                            <input type="text" class="form-control" id="nombre">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="form-label">Correo electrónico: </label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="mb-4">
+                            <label for="contraseña" class="form-label">Contraseña: </label>
+                            <input type="password" class="form-control" id="contraseña">
+                        </div>
+                        <div class="d-grid">
+                            <input type="button" class="btn btn-dark form-control" onclick="registrarUsuario()" value="Registrar"></input>
+                        </div>
+                        <div class="my-3">
+                            <span>Ya tienes cuenta? <a href="inicio_sesion.html">Iniciar sesión</a></span><br>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br>
+        <footer style= "text-align: center;">
+            <p>&copy; Copyright 2024</p>
+        </footer>
+        <script src="js/proyecto-Registrar.js"></script>
+    </body>
+</html>
