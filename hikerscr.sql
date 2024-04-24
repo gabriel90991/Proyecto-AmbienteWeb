@@ -59,17 +59,10 @@ CREATE TABLE tours (
 CREATE TABLE usuarios (
   UsuarioID int(11) NOT NULL,
   Nombre varchar(50) NOT NULL,
-  Apellido varchar(50) NOT NULL,
   email varchar(100) NOT NULL,
-  contrasena varchar(100) NOT NULL,
-  RolID int(11) NOT NULL
+  contrasena varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE roles (
-  RolID int(11) NOT NULL,
-  Nombre varchar(50) NOT NULL,
-  PRIMARY KEY (RolID)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --------------------------------------------------------------------------------------
 
@@ -95,7 +88,6 @@ ALTER TABLE tours
 
 ALTER TABLE usuarios
   ADD PRIMARY KEY (UsuarioID),
-  ADD KEY RolID (RolID);
   
 -------------------------------------------------------------------------------------
 
@@ -112,8 +104,6 @@ ALTER TABLE reservas
 ALTER TABLE tours
   ADD CONSTRAINT fk_tours FOREIGN KEY (CategoriaID) REFERENCES categoriaTours (CategoriaID);
 
-ALTER TABLE usuarios
-  ADD CONSTRAINT fk_usuarios FOREIGN KEY (RolID) REFERENCES roles (RolID);
 
 COMMIT;
 
