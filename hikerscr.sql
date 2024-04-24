@@ -40,8 +40,7 @@ CREATE TABLE reservas (
   TourID int(11) NOT NULL,
   UsuarioID int(11) NOT NULL,
   Fecha date NOT NULL,
-  Estado varchar(20) NOT NULL,
-  Numero_Participantes int(11) NOT NULL
+  Telefono varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE tours (
@@ -63,7 +62,30 @@ CREATE TABLE usuarios (
   contrasena varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+CREATE TABLE formulario (
+    FormularioID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+    Correo VARCHAR(100) NOT NULL,
+    Asunto VARCHAR(200) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--------------------------------------------------------------------------------------
+
+
+CREATE PROCEDURE `VER_USUARIOS`
+(IN `pcorreo` VARCHAR(30)) NOT DETERMINISTIC CONTAINS 
+SQL SQL SECURITY INVOKER SELECT * FROM usuario WHERE email=pcorreo
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `INSERTAR_FORMULARIO`
+(IN `pnombre` VARCHAR(100), IN `pcorreo` VARCHAR(100), 
+IN `pasunto` VARCHAR(300)) NOT DETERMINISTIC CONTAINS 
+SQL SQL SECURITY INVOKER INSERT INTO formulario 
+VALUES(null,pnombre,pcorreo,pasunto)
+
+CREATE PROCEDURE `LOGIN`(IN `pcorreo` VARCHAR(30), 
+IN `pcontrasena` VARCHAR(25)) NOT DETERMINISTIC CONTAINS 
+SQL SQL SECURITY INVOKER SELECT * FROM usuario 
+WHERE email=pcorreo AND contraseña=pcontrasena
 --------------------------------------------------------------------------------------
 
 ALTER TABLE categoriaTours

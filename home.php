@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animaciones.css">
 </head>
-<body>
+<body>  
     <header class="bg_animate">
         <section class="banner contenedor">
             <secrion class="banner_title" style="text-align: center;">
@@ -40,7 +40,6 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a href="home.php" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="productos.php" class="nav-link">Productos</a></li>
                     <li class="nav-item"><a href="reservacion.php" class="nav-link">Reservaciones</a></l>
                     <li class="nav-item"><a href="Nosotros.html" class="nav-link">Quienes somos</a></li>
                     <li class="nav-item"><a href="contactenos.html" class="nav-link active">Contáctenos</a></li>
@@ -53,61 +52,113 @@
         <div class="row">
             <div class="col-md-8">
                 <h1>Bienvenido a HikersCR</h1>
-                <?php
-                    session_start();
-                    include_once 'conexion/conexion.php';
-                    $conexion = Conecta();
-                    if (!$conexion) {
-                        die("Connection failed: " . mysqli_connect_error());
-                    }
-                    $usuarioID = $_SESSION['usuarioID']; // Asume que $_SESSION['usuarioID'] contiene el ID del usuario que ha iniciado sesión
-                    $sql = "SELECT Nombre FROM usuarios WHERE UsuarioID = '$usuarioID'";
-                    $result = mysqli_query($conexion, $sql);
-                    if (mysqli_num_rows($result) > 0) {
-                        while($row = mysqli_fetch_assoc($result)) {
-                            echo "<p>Bienvenido, " . $row["Nombre"] . "!</p>";
-                        }
-                    } else {
-                        echo "0 results";
-                    }
-                    Desconectar($conexion);
-                ?>
+                
                 <p>¡La mejor tienda de hiking en Costa Rica!</p>
                 <p>Ofrecemos una amplia selección de equipos y accesorios para tus aventuras al aire libre.</p>
             </div>
-            <div class="col-md-4">
-                <h4>Anuncios</h4>
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="anuncio1.jpg" class="d-block w-100" alt="Anuncio 1">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Título del Anuncio 1</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="anuncio2.jpg" class="d-block w-100" alt="Anuncio 2">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Título del Anuncio 2</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="anuncio3.jpg" class="d-block w-100" alt="Anuncio 3">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Título del Anuncio 3</h5>
-                            </div>
-                        </div>
+            <div>
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0" style="text-align: right;">
+            <li class="nav-item"><a href="inicio_sesion.html" class="btn btn-primary " style="text-decoration: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z" />
+                        <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                    </svg> Iniciar sesión</a> <button class="btn btn-danger " onclick="cerrarSesion()">Cerrar
+                    Sesion</button></li><br>
+    </div>
+    <div class="container">
+        <div class="row">
+            <br>
+            <h3>Productos</h3>
+            <div class="col-4">
+                <div class="card">
+                    <img src="img/globos.jpg" alt="Imagen de globos" class="card-img-top" height="300">
+                    <div class="card-body">
+                        <h5 class="card-title">Sendero Rincón de la Vieja</h5>
+                        <p class="card-text">Precio: $15 por persona </p>
+                        <p class="card-text">Duración: 4 horas </p>
+                        <p class="card-text">Ubicación: Parque Nacional Rincón de la Vieja </p>
+                        <p class="card-text">Dificultad: Moderada </p>
+
+                        <button type="button" class="btn btn-primary btn-lg"><a href="compra.php"
+                            style="color: white; text-decoration: none;">Comprar</a></button>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Anterior</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Siguiente</span>
-                    </a>
                 </div>
             </div>
+            <div class="col-4">
+                <div class="card">
+                    <img src="img/mesa.jpg" alt="Imagen de mesa" class="card-img-top" height="300">
+                    <div class="card-body">
+                        <h5 class="card-title">Caminata al Parque Nacional Cerro Chirripó</h5>
+                        <p class="card-text">Precio: $25 por persona </p>
+                        <p class="card-text">Duración: 2 días </p>
+                        <p class="card-text">Ubicación: Parque Nacional Cerro Chirripó </p>
+                        <p class="card-text">Dificultad: Alta </p>
+                        <button type="button" class="btn btn-primary btn-lg"><a href="compra.php"
+                            style="color: white; text-decoration: none;">Comprar</a></button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <img src="img/paquete.jpg" alt="Imagen de paquete" class="card-img-top" height="300">
+                    <div class="card-body">
+                        <h5 class="card-title">Sendero de los Quetzales en Monteverde</h5>
+                        <p class="card-text">Precio: $20 por persona </p>
+                        <p class="card-text">Duración: 3 horas </p>
+                        <p class="card-text">Ubicación: Reserva Biológica Monteverde </p>
+                        <p class="card-text">Dificultad: Moderada </p>
+                        <button type="button" class="btn btn-primary btn-lg"><a href="compra.php"
+                                style="color: white; text-decoration: none;">Comprar</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <img src="img/caja.jpg" alt="Imagen de caja" class="card-img-top" height="300">
+                    <div class="card-body">
+                        <h5 class="card-title">Caminata al Volcán Arenal</h5>
+                        <p class="card-text">Precio: $30 por persona </p>
+                        <p class="card-text">Duración: 5 horas </p>
+                        <p class="card-text">Ubicación: Parque Nacional Volcán Arenal </p>
+                        <p class="card-text">Dificultad: Moderada </p>
+                        <button type="button" class="btn btn-primary btn-lg"><a href="compra.php"
+                                style="color: white; text-decoration: none;">Comprar</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <img src="img/letras.jpg" alt="Imagen de letras" class="card-img-top" height="300">
+                    <div class="card-body">
+                        <h5 class="card-title">Sendero Nauyaca en Dominical</h5>
+                        <p class="card-text">Precio: $10 por persona </p>
+                        <p class="card-text">Duración: 2 horas </p>
+                        <p class="card-text">Ubicación: Cascadas Nauyaca, Dominical </p>
+                        <p class="card-text">Dificultad: Fácil </p>
+                        <button type="button" class="btn btn-primary btn-lg"><a href="compra.php"
+                                style="color: white; text-decoration: none;">Comprar</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <img src="img/paquete.jpg" alt="Imagen de paquete" class="card-img-top" height="300">
+                    <div class="card-body">
+                        <h5 class="card-title">Camino de los Siete Ríos </h5>
+                        <p class="card-text">Precio: $40 por persona </p>
+                        <p class="card-text">Duración: 6 horas </p>
+                        <p class="card-text">Ubicación: Península de Osa </p>
+                        <p class="card-text">Dificultad: Alta </p>
+                        <button type="button" class="btn btn-primary btn-lg"><a href="compra.php"
+                                style="color: white; text-decoration: none;">Comprar</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
             <div class="container mt-4">
 
