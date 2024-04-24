@@ -23,14 +23,14 @@ const checarSesion=()=>{
 //Para home que se lo lleve a iniciar sesion si no tiene un nombre
 const mostrar=()=>{
     if(sesion==null){
-        window.location.href="inicio_sesion.php";
+        window.location.href="inicio_sesion.html";
     }
 }
 
 //Cerrar sesion 
 const cerrarSesion=()=>{
     localStorage.clear();
-    window.location.href="inicio_sesion.php";
+    window.location.href="inicio_sesion.hmtl";
 }
 
 //Expresiones regulares para validar 
@@ -38,7 +38,7 @@ const validarCorreo = (email) => {
     return /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/.test(email.trim());
 }
 
-const validarContraseña = (contraseña) => {
+const validarContraseña = (contrasena) => {
     return /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,25}$/.test(contrasena.trim());
 }
 
@@ -49,7 +49,7 @@ const validarNombre = (nombre) => {
 const registrarUsuario = async () => {
     var nombre = document.querySelector("#nombre").value;
     var correo = document.querySelector("#email").value;
-    var contraseña = document.querySelector("#contrasena").value;
+    var contrasena = document.querySelector("#contrasena").value;
 
     // Validando datos 
     if (correo.trim() === '' ||
@@ -85,7 +85,7 @@ const registrarUsuario = async () => {
         return;
     }
 
-    if (!validarContraseña(contrasena)) {
+    if (!validarContrasena(contrasena)) {
         Swal.fire({
             position: 'top-end',
             icon: 'error',
@@ -121,7 +121,7 @@ const registrarUsuario = async () => {
         })
         document.querySelector("#formRegistro").reset();
         setTimeout(() => {
-            window.location.href = "inicio_sesion.php";
+            window.location.href = "inicio_sesion.html";
         }, 2000);
     } else {
         Swal.fire({
@@ -159,7 +159,7 @@ const loginUsuario = async () => {
         return;
     }
 
-    if (!validarContraseña(contrasena)) {
+    if (!validarContrasena(contrasena)) {
         Swal.fire({
             position: 'top-end',
             icon: 'error',
