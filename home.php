@@ -42,7 +42,7 @@
                     <li class="nav-item"><a href="home.php" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="productos.php" class="nav-link">Productos</a></li>
                     <li class="nav-item"><a href="reservacion.php" class="nav-link">Reservaciones</a></l>
-                    <li class="nav-item"><a href="quienes_somos.html" class="nav-link">Quienes somos</a></li>
+                    <li class="nav-item"><a href="Nosotros.html" class="nav-link">Quienes somos</a></li>
                     <li class="nav-item"><a href="contactenos.html" class="nav-link active">Contáctenos</a></li>
                 </ul>
             </div>
@@ -118,9 +118,9 @@ $conexion = Conecta();
 if (!$conexion) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "SELECT t.TourID, t.Nombre, t.Descripcion, t.Duracion, t.Dificultad, t.Precio, t.Ubicacion, c.Nombre AS Categoria 
+$sql = "SELECT t.TourID, t.NombreT, t.Descripcion, t.Duracion, t.Dificultad, t.Precio, t.Ubicacion, c.Nombre AS Categoria 
         FROM tours t 
-        INNER JOIN `categoria tours` c ON t.CategoriaID = c.CategoriaID";
+        INNER JOIN `categoriaTours` c ON t.CategoriaID = c.CategoriaID";
 $result = mysqli_query($conexion, $sql);
 $tours = [];
 if (mysqli_num_rows($result) > 0) {

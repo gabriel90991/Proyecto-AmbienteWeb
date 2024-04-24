@@ -2,7 +2,7 @@
 // Se creo la conexion con la base de datos de dos maneras para facilitar el codigo en diferentes partes.
     $server='localhost';
     $user='root';
-    $password='';
+    $password='1234';
     $dataBase = "hikerscr";
     $conexion = mysqli_connect($server, $user, $password, $dataBase);
 
@@ -13,7 +13,7 @@
     function Conecta(){
         $server = "localhost";
         $user = "root";
-        $pass = "";
+        $pass = "1234";
         $bd = "hikerscr";
         $conexion = mysqli_connect($server, $user, $pass, $bd);
     
