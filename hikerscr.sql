@@ -12,22 +12,6 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 
-
-CREATE TABLE categoriaTours (
-  CategoriaID int(11) NOT NULL,
-  Nombre varchar(50) NOT NULL,
-  Descripcion varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-
-CREATE TABLE eventos (
-  EventoID int(11) NOT NULL,
-  TourID int(11) NOT NULL,
-  nombreE text NOT NULL,
-  Fecha date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-
 CREATE TABLE historial (
   HistorialID int(11) NOT NULL,
   ReservaID int(11) NOT NULL,
@@ -46,12 +30,10 @@ CREATE TABLE reservas (
 CREATE TABLE tours (
   TourID int(11) NOT NULL,
   NombreT varchar(100) NOT NULL,
-  Descripcion varchar(200) NOT NULL,
   Duracion int(11) NOT NULL,
   Dificultad varchar(20) NOT NULL,
   Precio decimal(10,2) NOT NULL,
-  Ubicacion varchar(100) NOT NULL,
-  CategoriaID int(11) NOT NULL
+  Ubicacion varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
@@ -68,6 +50,15 @@ CREATE TABLE formulario (
     Correo VARCHAR(100) NOT NULL,
     Asunto VARCHAR(200) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE pago (
+    id_compra INT AUTO_INCREMENT PRIMARY KEY,
+    nombreTarjeta VARCHAR(100) NOT NULL,
+    numeroTarjeta VARCHAR(16) NOT NULL,
+    fecha  VARCHAR(16) NOT NULL,
+    codigo INT NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 --------------------------------------------------------------------------------------
 
@@ -122,9 +113,6 @@ ALTER TABLE historial
 ALTER TABLE reservas
   ADD CONSTRAINT fk1_reservas FOREIGN KEY (TourID) REFERENCES tours (TourID),
   ADD CONSTRAINT fk2_reservas FOREIGN KEY (UsuarioID) REFERENCES usuarios (UsuarioID);
-
-ALTER TABLE tours
-  ADD CONSTRAINT fk_tours FOREIGN KEY (CategoriaID) REFERENCES categoriaTours (CategoriaID);
 
 
 COMMIT;

@@ -9,28 +9,32 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animaciones.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
     <?php
-    if ($_GET) {
+if ($_GET) {
     ?>
-        <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'ERROR',
-                text: '<?php echo $_GET["respuesta"] ?>',
-                footer: ''
-            })
-        </script>
+    <script>       
+Swal.fire({
+        icon: 'error',
+        title: 'ERROR',
+        text: '<?php echo $_GET["respuesta"] ?>',
+        footer: ''
+      })</script>
     <?php
-    }
+}
     ?>
-    <header class="bg_animate">
+
+<header class="bg_animate">
         <section class="banner contenedor">
             <secrion class="banner_title" style="text-align: center;">
                 <h2 > HikersCR </h2>
             </secrion>
+            <div class="banner_img">
+                <img src="img/logo-decoracion.jpg" width="100">
+            </div>
         </section>
         <div class="burbujas">
             <div class="burbuja"></div>
@@ -62,7 +66,7 @@
             </div>
         </div>
     </nav>
-    <br>
+    <br> 
     <div>
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0" style="text-align: right;">
             <li class="nav-item"><a href="inicio_sesion.html" class="btn btn-primary " style="text-decoration: none;">
@@ -77,22 +81,26 @@
     <div class="container w-75  mt-5 rounded shadow">
         <div class="row align-items-stretch">
             <div class="col">
-                <h2 class="fw-bold text-center py-4">Reservación</h2>
-                <form action="conexion/insertaReservacion.php">
-                <div class="mb-4">
-                        <label for="hora" class="form-label">Tour seleccionado: </label>
-                        <input type="text" class="form-control" name="hora">
+                <h2 class="fw-bold text-center py-4">Realizar pago</h2>
+                <form id="formCompra" action="conexion/insertaCompra.php" method="GET">
+                    <div class="mb-4">
+                        <label for="nombreTarjeta" class="form-label">Nombre tarjeta: </label>
+                        <input type="text" class="form-control" name="nombreTarjeta" id="nombreTarjeta">
                     </div>
                     <div class="mb-4">
-                        <label for="fecha" class="form-label">Fecha del evento: </label>
-                        <input type="date" class="form-control" name="fecha">
+                        <label for="numeroTarjeta" class="form-label">Número tarjeta: </label>
+                        <input type="text" class="form-control" name="numeroTarjeta" id="numeroTarjeta">
                     </div>
                     <div class="mb-4">
-                        <label for="telefono" class="form-label">Telefono del cliente: </label>
-                        <input type="number" class="form-control" name="telefono">
+                        <label for="fecha" class="form-label">Fecha expiración: </label>
+                        <input type="date" class="form-control" name="fecha" id="fecha">
+                    </div>
+                    <div class="mb-4">
+                        <label for="codigo" class="form-label">Código seguridad: </label>
+                        <input type="text" class="form-control" name="codigo" id="codigo">
                     </div>
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-primary">Realizar pago</button>
+                        <button type="submit" class="btn btn-primary" id="submit" name="submit">Realizar pago</button>
                     </div>
                 </form>
             </div>
@@ -105,7 +113,7 @@
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/proyecto-Reservacion.js"></script>
+    <script src="js/proyecto-Compra.js"></script>
 </body>
 
 </html>
