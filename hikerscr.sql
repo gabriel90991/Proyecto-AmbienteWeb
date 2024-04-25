@@ -77,6 +77,20 @@ CREATE PROCEDURE `LOGIN`(IN `pcorreo` VARCHAR(30),
 IN `pcontrasena` VARCHAR(25)) NOT DETERMINISTIC CONTAINS 
 SQL SQL SECURITY INVOKER SELECT * FROM usuario 
 WHERE email=pcorreo AND contraseña=pcontrasena
+
+DELIMITER $$
+
+CREATE PROCEDURE INSERTAR_CONTACTO(
+    IN p_nombre VARCHAR(100),
+    IN p_correo VARCHAR(100),
+    IN p_asunto VARCHAR(100)
+)
+BEGIN
+    INSERT INTO formulario (Nombre, Correo, Asunto)
+    VALUES (p_nombre, p_correo, p_asunto);
+END$$
+
+DELIMITER ;
 --------------------------------------------------------------------------------------
 
 ALTER TABLE historial
