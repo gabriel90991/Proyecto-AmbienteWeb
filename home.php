@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> - Página de inicio</title>
+    <title> Inicio</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animaciones.css">
 </head>
@@ -12,10 +12,8 @@
         <section class="banner contenedor">
             <secrion class="banner_title" style="text-align: center;">
                 <h2 > HikersCR </h2>
-            </section>
-            <div class="banner_img">
-                <img src="img/nombre.jpg" width="100">
-            </div>
+            </secrion>
+          
         </section>
         <div class="burbujas">
             <div class="burbuja"></div>
@@ -54,7 +52,10 @@
                 <h1>Bienvenido a HikersCR</h1>
                 
                 <p>¡La mejor tienda de hiking en Costa Rica!</p>
-                <p>Ofrecemos una amplia selección de equipos y accesorios para tus aventuras al aire libre.</p>
+                <p>Ofrecemos una amplia selección tours para tus aventuras al aire libre.Con nosotros, podrás llevar al límite o liberar ese espíritu aventurero, conociendo 
+                    los diferentes lugares que tenemos en nuestro país y a disposición de aquellos que 
+                    desean poder conectar con la naturaleza.
+                </p>
             </div>
             <div>
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0" style="text-align: right;">
@@ -73,7 +74,7 @@
             <h3>Productos</h3>
             <div class="col-4">
                 <div class="card">
-                    <img src="img/globos.jpg" alt="Imagen de globos" class="card-img-top" height="300">
+                    <img src="images/VolcanRV.jpg" alt="Imagen de Rincon" class="card-img-top" height="300">
                     <div class="card-body">
                         <h5 class="card-title">Sendero Rincón de la Vieja</h5>
                         <p class="card-text">Precio: $15 por persona </p>
@@ -81,156 +82,88 @@
                         <p class="card-text">Ubicación: Parque Nacional Rincón de la Vieja </p>
                         <p class="card-text">Dificultad: Moderada </p>
 
-                        <button type="button" class="btn btn-primary btn-lg"><a href="compra.php"
-                            style="color: white; text-decoration: none;">Comprar</a></button>
+                        <button type="button" class="btn btn-primary btn-lg"><a href="reservacion.php"    
+                            style="color: white; text-decoration: none;">Reservar</a></button>
                     </div>
                 </div>
             </div>
             <div class="col-4">
                 <div class="card">
-                    <img src="img/mesa.jpg" alt="Imagen de mesa" class="card-img-top" height="300">
+                    <img src="images/Chirripo.jpg" alt="Imagen de Chirripo" class="card-img-top" height="300">
                     <div class="card-body">
                         <h5 class="card-title">Caminata al Parque Nacional Cerro Chirripó</h5>
                         <p class="card-text">Precio: $25 por persona </p>
                         <p class="card-text">Duración: 2 días </p>
                         <p class="card-text">Ubicación: Parque Nacional Cerro Chirripó </p>
                         <p class="card-text">Dificultad: Alta </p>
-                        <button type="button" class="btn btn-primary btn-lg"><a href="compra.php"
-                            style="color: white; text-decoration: none;">Comprar</a></button>
+                        <button type="button" class="btn btn-primary btn-lg"><a href="reservacion.php"
+                            style="color: white; text-decoration: none;">Reservar</a></button>
 
                     </div>
                 </div>
             </div>
             <div class="col-4">
                 <div class="card">
-                    <img src="img/paquete.jpg" alt="Imagen de paquete" class="card-img-top" height="300">
+                    <img src="images/Quetzales.jpg" alt="Imagen Los Quetzales" class="card-img-top" height="300">
                     <div class="card-body">
                         <h5 class="card-title">Sendero de los Quetzales en Monteverde</h5>
                         <p class="card-text">Precio: $20 por persona </p>
                         <p class="card-text">Duración: 3 horas </p>
                         <p class="card-text">Ubicación: Reserva Biológica Monteverde </p>
                         <p class="card-text">Dificultad: Moderada </p>
-                        <button type="button" class="btn btn-primary btn-lg"><a href="compra.php"
-                                style="color: white; text-decoration: none;">Comprar</a></button>
+                        <button type="button" class="btn btn-primary btn-lg"><a href="reservacion.php"
+                                style="color: white; text-decoration: none;">Reservar</a></button>
                     </div>
                 </div>
             </div>
             <div class="col-4">
                 <div class="card">
-                    <img src="img/caja.jpg" alt="Imagen de caja" class="card-img-top" height="300">
+                    <img src="images/Arenal.jpg" alt="Imagen de Arenal" class="card-img-top" height="300">
                     <div class="card-body">
                         <h5 class="card-title">Caminata al Volcán Arenal</h5>
                         <p class="card-text">Precio: $30 por persona </p>
                         <p class="card-text">Duración: 5 horas </p>
                         <p class="card-text">Ubicación: Parque Nacional Volcán Arenal </p>
                         <p class="card-text">Dificultad: Moderada </p>
-                        <button type="button" class="btn btn-primary btn-lg"><a href="compra.php"
-                                style="color: white; text-decoration: none;">Comprar</a></button>
+                        <button type="button" class="btn btn-primary btn-lg"><a href="reservacion.php"
+                                style="color: white; text-decoration: none;">Reservar</a></button>
                     </div>
                 </div>
             </div>
             <div class="col-4">
                 <div class="card">
-                    <img src="img/letras.jpg" alt="Imagen de letras" class="card-img-top" height="300">
+                    <img src="images/Nauyaca.jpg" alt="Imagen de Nauyaca" class="card-img-top" height="300">
                     <div class="card-body">
-                        <h5 class="card-title">Sendero Nauyaca en Dominical</h5>
+                        <h5 class="card-title">Catarata Nauyaca en Dominical</h5>
                         <p class="card-text">Precio: $10 por persona </p>
                         <p class="card-text">Duración: 2 horas </p>
                         <p class="card-text">Ubicación: Cascadas Nauyaca, Dominical </p>
                         <p class="card-text">Dificultad: Fácil </p>
-                        <button type="button" class="btn btn-primary btn-lg"><a href="compra.php"
-                                style="color: white; text-decoration: none;">Comprar</a></button>
+                        <button type="button" class="btn btn-primary btn-lg"><a href="reservacion.php"
+                                style="color: white; text-decoration: none;">Reservar</a></button>
                     </div>
                 </div>
             </div>
             <div class="col-4">
                 <div class="card">
-                    <img src="img/paquete.jpg" alt="Imagen de paquete" class="card-img-top" height="300">
+                    <img src="images/IslaMurcielago.jpg" alt="Imagen de Islas Murcielago" class="card-img-top" height="300">
                     <div class="card-body">
-                        <h5 class="card-title">Camino de los Siete Ríos </h5>
-                        <p class="card-text">Precio: $40 por persona </p>
+                        <h5 class="card-title">Achipiélago Islas murciélago </h5>
+                        <p class="card-text">Precio: $60 por persona </p>
                         <p class="card-text">Duración: 6 horas </p>
-                        <p class="card-text">Ubicación: Península de Osa </p>
-                        <p class="card-text">Dificultad: Alta </p>
-                        <button type="button" class="btn btn-primary btn-lg"><a href="compra.php"
-                                style="color: white; text-decoration: none;">Comprar</a></button>
+                        <p class="card-text">Ubicación: Península de Santa Elena </p>
+                        <p class="card-text">Dificultad: Fácil </p>
+                        <button type="button" class="btn btn-primary btn-lg"><a href="reservacion.php"
+                                style="color: white; text-decoration: none;">Reservar</a></button>
                     </div>
                 </div>
-            </div>
+            </div>  
         </div>
     </div>
 
             <div class="container mt-4">
 
     <div class="row">
-    <?php
-include_once 'conexion/conexion.php';
-$conexion = Conecta();
-if (!$conexion) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-$sql = "SELECT t.TourID, t.NombreT, t.Descripcion, t.Duracion, t.Dificultad, t.Precio, t.Ubicacion, c.Nombre AS Categoria 
-        FROM tours t 
-        INNER JOIN `categoriaTours` c ON t.CategoriaID = c.CategoriaID";
-$result = mysqli_query($conexion, $sql);
-$tours = [];
-if (mysqli_num_rows($result) > 0) {
-    while($row = mysqli_fetch_assoc($result)) {
-        $tours[] = $row;
-    }
-} else {
-    echo "No hay tours disponibles.";
-}
-Desconectar($conexion);
-
-foreach ($tours as $tour) {
-    echo '<div class="col-md-3">';
-    echo '<h4>' . $tour["Nombre"] . '</h4>';
-    echo '<p>' . $tour["Descripcion"] . '</p>';
-    echo '<p>Duración: ' . $tour["Duracion"] . '</p>';
-    echo '<p>Dificultad: ' . $tour["Dificultad"] . '</p>';
-    echo '<p>Precio: ' . $tour["Precio"] . '</p>';
-    echo '<p>Ubicación: ' . $tour["Ubicacion"] . '</p>';
-    echo '<p>Categoría: ' . $tour["Categoria"] . '</p>';
-    echo '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservaModal' . $tour["TourID"] . '">Reservar</button>';
-    echo '</div>';
-}
-
-foreach ($tours as $tour) {
-    echo '<div class="modal fade" id="reservaModal' . $tour["TourID"] . '" tabindex="-1" role="dialog" aria-labelledby="reservaModalLabel' . $tour["TourID"] . '" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="reservaModalLabel' . $tour["TourID"] . '">Reservar Tour</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="reservar_tour.php" method="post">
-                        <input type="hidden" name="tourID" value="' . $tour["TourID"] . '">
-                        <input type="hidden" name="usuarioID" value="' . $_SESSION['usuarioID'] . '">
-                        <div class="form-group">
-                            <label for="fecha">Fecha</label>
-                            <input type="date" class="form-control" id="fecha" name="fecha" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="estado">Estado</label>
-                            <input type="text" class="form-control" id="estado" name="estado" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="numero_participantes">Número de Participantes</label>
-                            <input type="number" class="form-control" id="numero_participantes" name="numero_participantes" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Reservar</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>';
-}
-?>
-
 
 </div>
 

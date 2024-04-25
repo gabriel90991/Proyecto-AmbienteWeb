@@ -75,7 +75,7 @@ echo json_encode($valido);
 // si todos los datos estan correctos, insertar en base de datos
 
 if ($nombreTarjetaOk && $numeroTarjetaOk && $fechaOk && $codigoOk){
-    include 'conexion/conexion.php';
+    include_once 'conexion/conexion.php';
 
     echo json_encode(InsertaDatos($nombreTarjeta, $numeroTarjeta, $fecha, $codigo));
     header("Location: ../gracias_compra.html");

@@ -21,9 +21,7 @@
   margin-bottom: 20px;
 }
 
-.banner_img{
-  animation: movimiento 2.5s linear infinite;
-}
+
 
 .banner_img img{
   width: 100px;
