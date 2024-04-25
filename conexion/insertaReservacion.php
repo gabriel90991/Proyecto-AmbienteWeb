@@ -63,7 +63,7 @@ echo json_encode($valido);
 if ($TourIDOk && $FechaOk && $TelefonoOk){
     include 'conexion/conexion.php';
 
-    echo json_encode(InsertaDatosR($fecha, $hora, $telefono, $servicio));
+    echo json_encode(InsertaDatosR($fecha, $hora, $telefono));
     header("Location: ../compra.php");
     }else {
         // si no, envíe error
