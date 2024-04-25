@@ -7,7 +7,7 @@
  if($_POST){
    $correo=$_POST['email'];
    $contrasena=$_POST['contrasena'];
-   $nombre=$_POST['nombre'];
+   $nombre=$_POST['Nombre'];
 
    // Por medio de un procedimiento almacenado verifica si existe el correo si es asi no lo deja continuar ya que 
    // solo se puede un correo por usuario.

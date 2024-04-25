@@ -38,7 +38,7 @@ const validarCorreo = (email) => {
     return /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/.test(email.trim());
 }
 
-const validarContraseña = (contrasena) => {
+const validarContrasena = (contrasena) => {
     return /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,25}$/.test(contrasena.trim());
 }
 
@@ -46,8 +46,8 @@ const validarNombre = (nombre) => {
     return /^([a-z ñáéíóú]{2,20})$/i.test(nombre.trim());
 }
 
-const registrarUsuario = async () => {
-    var nombre = document.querySelector("#nombre").value;
+const RegistrarUsuario = async () => {
+    var nombre = document.querySelector("#Nombre").value;
     var correo = document.querySelector("#email").value;
     var contrasena = document.querySelector("#contrasena").value;
 
@@ -101,7 +101,7 @@ const registrarUsuario = async () => {
     const datos = new FormData();
     datos.append("email", correo);
     datos.append("contrasena", contrasena);
-    datos.append("nombre", nombre);
+    datos.append("Nombre", nombre);
 
     //Utilizamos Fetch una investigacion que se realiazo que es mas utilizado que Ajax
 

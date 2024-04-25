@@ -12,13 +12,6 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 
-CREATE TABLE historial (
-  HistorialID int(11) NOT NULL,
-  ReservaID int(11) NOT NULL,
-  Estado varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-
 CREATE TABLE reservas (
   ReservaID int(11) NOT NULL,
   TourID int(11) NOT NULL,
@@ -64,7 +57,7 @@ CREATE TABLE pago (
 
 
 CREATE PROCEDURE `VER_USUARIOS`
-(IN `pcorreo` VARCHAR(30)) NOT DETERMINISTIC CONTAINS 
+(IN `pcorreo` VARCHAR(100)) NOT DETERMINISTIC CONTAINS 
 SQL SQL SECURITY INVOKER SELECT * FROM usuarios WHERE email=pcorreo
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `INSERTAR_FORMULARIO`
@@ -73,10 +66,10 @@ IN `pasunto` VARCHAR(300)) NOT DETERMINISTIC CONTAINS
 SQL SQL SECURITY INVOKER INSERT INTO formulario 
 VALUES(null,pnombre,pcorreo,pasunto)
 
-CREATE PROCEDURE `LOGIN`(IN `pcorreo` VARCHAR(30), 
-IN `pcontrasena` VARCHAR(25)) NOT DETERMINISTIC CONTAINS 
+CREATE PROCEDURE `LOGIN`(IN `pcorreo` VARCHAR(100), 
+IN `pcontrasena` VARCHAR(100)) NOT DETERMINISTIC CONTAINS 
 SQL SQL SECURITY INVOKER SELECT * FROM usuarios 
-WHERE email=pcorreo AND contraseña=pcontrasena
+WHERE email=pcorreo AND contrasena=pcontrasena;
 
 DELIMITER $$
 
