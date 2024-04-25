@@ -1,4 +1,6 @@
 <?php
+
+include_once 'conexion.php';
  function recoge($var, $m = ""){
 if (!isset($_REQUEST[$var])){
     $tmp = (is_array($m)) ? [] : "";
@@ -71,6 +73,23 @@ if ($codigo == ""){
 }
 
 echo json_encode($valido);
+
+function InsertaDatos($nombreTarjeta, $numeroTarjeta, $fecha, $codigo) {
+    global $conexion;
+    $sql = "INSERT INTO pago (nombreTarjeta, numeroTarjeta, fecha, codigo) VALUES (?, ?, ?, ?)";
+
+    if ($stmt = $conexion->prepare($sql)) {
+        $stmt->bind_param("ssss", $nombreTarjeta, $numeroTarjeta, $fecha, $codigo);
+
+        if ($stmt->execute()) {
+            return array('success' => true, 'mensaje' => "Datos insertados correctamente");
+        } else {
+            return array('success' => false, 'mensaje' => "Error al insertar los datos: " . $stmt->error);
+        }
+    } else {
+        return array('success' => false, 'mensaje' => "Error al preparar la consulta: " . $conexion->error);
+    }
+}
 
 // si todos los datos estan correctos, insertar en base de datos
 

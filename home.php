@@ -52,7 +52,7 @@
                 <h1>Bienvenido a HikersCR</h1>
                 
                 <p>¡La mejor tienda de hiking en Costa Rica!</p>
-                <p>Ofrecemos una amplia selección tours para tus aventuras al aire libre.Con nosotros, podrás llevar al límite o liberar ese espíritu aventurero, conociendo 
+                <p>Ofrecemos una amplia selección tours para tus aventuras al aire libre. Con nosotros, podrás llevar al límite o liberar ese espíritu aventurero, conociendo 
                     los diferentes lugares que tenemos en nuestro país y a disposición de aquellos que 
                     desean poder conectar con la naturaleza.
                 </p>
@@ -76,7 +76,11 @@
                 <div class="card">
                     <img src="images/VolcanRV.jpg" alt="Imagen de Rincon" class="card-img-top" height="300">
                     <div class="card-body">
-                        <h5 class="card-title">Sendero Rincón de la Vieja</h5>
+                    <h5 class="card-title">
+                    Sendero Rincón de la Vieja
+                    <span class="badge bg-success">Nuevo</span>
+                    <span class="badge bg-info">Difícil</span>
+                    </h5>
                         <p class="card-text">Precio: $15 por persona </p>
                         <p class="card-text">Duración: 4 horas </p>
                         <p class="card-text">Ubicación: Parque Nacional Rincón de la Vieja </p>
@@ -91,7 +95,10 @@
                 <div class="card">
                     <img src="images/Chirripo.jpg" alt="Imagen de Chirripo" class="card-img-top" height="300">
                     <div class="card-body">
-                        <h5 class="card-title">Caminata al Parque Nacional Cerro Chirripó</h5>
+                    <h5 class="card-title">
+                    Caminata al Parque Nacional Cerro Chirripó
+                    <span class="badge bg-info">Difícil</span>
+                    </h5>
                         <p class="card-text">Precio: $25 por persona </p>
                         <p class="card-text">Duración: 2 días </p>
                         <p class="card-text">Ubicación: Parque Nacional Cerro Chirripó </p>
@@ -106,7 +113,10 @@
                 <div class="card">
                     <img src="images/Quetzales.jpg" alt="Imagen Los Quetzales" class="card-img-top" height="300">
                     <div class="card-body">
-                        <h5 class="card-title">Sendero de los Quetzales en Monteverde</h5>
+                    <h5 class="card-title">
+                    Sendero de los Quetzales en Monteverde
+                    <span class="badge bg-success">Nuevo</span>
+                    </h5>
                         <p class="card-text">Precio: $20 por persona </p>
                         <p class="card-text">Duración: 3 horas </p>
                         <p class="card-text">Ubicación: Reserva Biológica Monteverde </p>
@@ -120,7 +130,10 @@
                 <div class="card">
                     <img src="images/Arenal.jpg" alt="Imagen de Arenal" class="card-img-top" height="300">
                     <div class="card-body">
-                        <h5 class="card-title">Caminata al Volcán Arenal</h5>
+                    <h5 class="card-title">
+                    Caminata al Volcán Arenal
+                    <span class="badge bg-info">Difícil</span>
+                    </h5>
                         <p class="card-text">Precio: $30 por persona </p>
                         <p class="card-text">Duración: 5 horas </p>
                         <p class="card-text">Ubicación: Parque Nacional Volcán Arenal </p>
@@ -134,7 +147,10 @@
                 <div class="card">
                     <img src="images/Nauyaca.jpg" alt="Imagen de Nauyaca" class="card-img-top" height="300">
                     <div class="card-body">
-                        <h5 class="card-title">Catarata Nauyaca en Dominical</h5>
+                    <h5 class="card-title">
+                    Catarata Nauyaca en Dominical
+                    <span class="badge bg-primary">Fácil</span>
+                    </h5>
                         <p class="card-text">Precio: $10 por persona </p>
                         <p class="card-text">Duración: 2 horas </p>
                         <p class="card-text">Ubicación: Cascadas Nauyaca, Dominical </p>
@@ -148,7 +164,11 @@
                 <div class="card">
                     <img src="images/IslaMurcielago.jpg" alt="Imagen de Islas Murcielago" class="card-img-top" height="300">
                     <div class="card-body">
-                        <h5 class="card-title">Achipiélago Islas murciélago </h5>
+                    <h5 class="card-title">
+                    Achipiélago Islas murciélago
+                    <span class="badge bg-success">Nuevo</span>
+                    <span class="badge bg-primary">Fácil</span>
+                    </h5>
                         <p class="card-text">Precio: $60 por persona </p>
                         <p class="card-text">Duración: 6 horas </p>
                         <p class="card-text">Ubicación: Península de Santa Elena </p>
