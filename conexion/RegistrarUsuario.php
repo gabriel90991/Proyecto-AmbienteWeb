@@ -17,7 +17,7 @@
    //Para poder continuar con el registro deben ningun usuario debe tener ese correo 
    $n=$resultado->num_rows;
    if($n==0){
-      $sqlInsertar="INSERT INTO usuario VALUES(null,'$nombre','$correo','$contrasena')";
+      $sqlInsertar="INSERT INTO usuarios VALUES(null,'$nombre','$correo','$contrasena')";
       if($conexion->query($sqlInsertar)===true){
          $valido['success']=true;
          $valido['mensaje']="Se guardo correctamente";
