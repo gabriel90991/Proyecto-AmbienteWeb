@@ -79,13 +79,6 @@ SQL SQL SECURITY INVOKER SELECT * FROM usuario
 WHERE email=pcorreo AND contraseña=pcontrasena
 --------------------------------------------------------------------------------------
 
-ALTER TABLE categoriaTours
-  ADD PRIMARY KEY (CategoriaID);
-
-ALTER TABLE eventos
-  ADD PRIMARY KEY (EventoID),
-  ADD KEY TourID (TourID);
-
 ALTER TABLE historial
   ADD PRIMARY KEY (HistorialID),
   ADD KEY ReservaID (ReservaID);
