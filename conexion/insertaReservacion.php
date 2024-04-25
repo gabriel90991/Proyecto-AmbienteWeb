@@ -15,15 +15,14 @@ function recoge($var, $m = "")
     return $tmp;
 }
 
+
 $TourID = recoge("TourID");
 $Fecha = recoge("Fecha");
 $Telefono = recoge("Telefono");
 
-
 $TourIDOk = false;
 $FechaOk = false;
 $TelefonoOk = false;
-
 
 $valido['success'] = array('success' => false, 'mensaje' => "");
 
@@ -54,19 +53,33 @@ if ($Telefono == "") {
     $TelefonoOk = true;
 }
 
-
-
 echo json_encode($valido);
 
 // si todos los datos estan correctos, insertar en base de datos
-
 if ($TourIDOk && $FechaOk && $TelefonoOk){
-    include 'conexion/conexion.php';
+    include 'conexion.php'; 
 
-    echo json_encode(InsertaDatosR($fecha, $hora, $telefono));
+    echo json_encode(InsertaDatosR($Fecha, $Telefono));
     header("Location: ../compra.php");
-    }else {
-        // si no, envíe error
-        $mensaje = $valido['mensaje'];
-        header("Location: ../reservacion.php?respuesta=$mensaje");
+}else {
+    // si no, envíe error
+    $mensaje = $valido['mensaje'];
+    header("Location: ../reservacion.php?respuesta=$mensaje");
+}
+
+function InsertaDatosR($Fecha, $Telefono) {
+    $conn = Conecta();
+    $sql = "INSERT INTO reservas (fecha, telefono) VALUES (?, ?)";
+
+    if ($stmt = $conn->prepare($sql)) {
+        $stmt->bind_param("ss", $Fecha, $Telefono);
+
+        if ($stmt->execute()) {
+            return array('success' => true, 'mensaje' => "Datos insertados correctamente");
+        } else {
+            return array('success' => false, 'mensaje' => "Error al insertar los datos: " . $stmt->error);
+        }
+    } else {
+        return array('success' => false, 'mensaje' => "Error al preparar la consulta: " . $conn->error);
     }
+}
